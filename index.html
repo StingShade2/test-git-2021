@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="./css/menu.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <title>Responsive sidebar submenus</title>
+    </head>
+    <body>
+        <!--========== HEADER ==========-->
+        <header class="header">
+            <div class="header__container">
+                <img src="../css/img/icons/logo2.png" alt="" class="header__img">
+
+                <p href="#" class="header__logo" style="opacity: 0;">Mirror : izal</p>
+    
+                <div class="header__search">
+                    <a href="#" class="header__logo">Bienvenue de l'autre coté du miroir, pénétrez dans l'univers de Izal ! Le monde miroir fantastique</a>
+                </div>
+    
+                <div class="header__toggle">
+                    <i class='bx bx-menu' id="header-toggle"></i>
+                </div>
+            </div>
+        </header>
+
+        <!--========== NAV ==========-->
+        <div class="nav" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="#" class="nav__link nav__logo">
+                        <i class='bx bx-globe nav_icon' ></i>
+                        <span class="nav__logo-name">Mirror : Izal</span>
+                    </a>
+    
+                    <div class="nav__list">
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Profile</h3>
+    
+                            <a href="#" class="nav__link active">
+                                <i class='bx bx-home nav__icon' ></i>
+                                <span class="nav__name">Accueil</span>
+                            </a>
+                            
+                            <!--{% if is_granted('ROLE_USER') %}-->
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-user nav__icon' ></i>
+                                    <span class="nav__name">Profile</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="#" class="nav__dropdown-item">Données personnelle</a>
+                                        <a href="#" class="nav__dropdown-item">Compte</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--{% endif %}-->
+                            
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-message-rounded nav__icon' ></i>
+                                <span class="nav__name">Forum</span>
+                            </a>
+                        </div>
+    
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Informations</h3>
+    
+                           
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-user nav__icon' ></i>
+                                    <span class="nav__name">Lore et Histoire</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="#" class="nav__dropdown-item">Chronologie</a>
+                                        <a href="#" class="nav__dropdown-item">Cartes</a>
+                                        <a href="#" class="nav__dropdown-item">Panthéons</a>
+                                        <a href="#" class="nav__dropdown-item">Magie</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-user nav__icon' ></i>
+                                    <span class="nav__name">Bibliothéque</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="#" class="nav__dropdown-item">Races</a>
+                                        <a href="#" class="nav__dropdown-item">Factions</a>
+                                        <a href="#" class="nav__dropdown-item">Religions</a>
+                                        <a href="#" class="nav__dropdown-item">Flore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-user nav__icon' ></i>
+                                    <span class="nav__name">Jeu de role</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="#" class="nav__dropdown-item">Stats et dés</a>
+                                        <a href="#" class="nav__dropdown-item">Comment RP</a>
+                                        <a href="#" class="nav__dropdown-item">Créer sa fiche</a>
+                                        <a href="#" class="nav__dropdown-item">Armurerie</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--{% if is_granted('ROLE_USER') %}-->
+                <a href="#" class="nav__link nav__logout">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Se déconnecter</span>
+                </a>
+                <!--{% else %}--> 
+                  <a href="#" class="nav__link nav__logout">
+                    <i class='bx bxs-user-badge nav__icon'></i>
+                    <span class="nav__name">Inscription</span>
+                </a> 
+            </nav>
+        </div>
+
+        <!--========== CONTENTS ==========-->
+        <main>
+            <div class="containerNormale">
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  
+              </tr>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        
+    </tr>
+        </table>
+        <h1 style="margin-left: 450px;">C'est beau non ?</h1>
+    </div>
+
+        <div class="container">
+            <div class="box" style="height: 200px;">1</div>
+            <div class="box" style="width: 200px;">2</div>
+            <div class="box" style="width: 500px;">3</div>
+            <div class="box">4</div>
+        </div>
+
+        <div class="containerWrap" style="margin-top: 20px;">
+            <div class="boxWrap" style="order: 2; color: aqua;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis facilis hic dignissimos beatae? Dolorem non quia quas iste similique. Nobis assumenda at similique dignissimos ducimus exercitationem itaque aspernatur ullam obcaecati.</div>
+            <div class="boxWrap">2</div>
+            <div class="boxWrap">3</div>
+            <div class="boxWrap" style="width: 20%;">4</div>
+            <div class="boxWrap">5</div>
+            <div class="boxWrap" style="width: 100px;">6</div>
+            <div class="boxWrap">7</div>
+        </div>
+
+        
+
+        </main>
+
+        <!--========== MAIN JS ==========-->
+        <script src="./js.js"></script>
+    </body>
+</html>
